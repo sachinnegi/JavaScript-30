@@ -5,6 +5,7 @@
 | Day | Challenge                                           |    Took On     |
 | :-: | :-------------------------------------------------- | :------------: |
 |  1  | [CSS Drum Kit][1]                                   | 24th July, 2020 |
+|  2  | [JavaScrrpt Clock][2]                                   | 26th July, 2020 |
 
 
 
