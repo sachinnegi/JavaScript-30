@@ -2,73 +2,90 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>JS + CSS Clock</title>
-</head>
-<body>
-
-
-    <div class="clock">
-      <div class="clock-face">
-        <div class="hand hour-hand"></div>
-        <div class="hand min-hand"></div>
-        <div class="hand second-hand"></div>
-      </div>
-    </div>
-
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
   <style>
-    html {
-      background: #018DED url(https://unsplash.it/1500/1000?image=881&blur=5);
+    *{
+      margin:0;
+      padding:0;
+      box-sizing: border-box;
+    }
+    html{
+      background: url(./starry-sky-998641.jpg) no-repeat center center fixed ;
       background-size: cover;
-      font-family: 'helvetica neue';
-      text-align: center;
-      font-size: 10px;
-    }
 
-    body {
-      margin: 0;
-      font-size: 2rem;
+    }
+    body{
+      box-sizing: border-box;
       display: flex;
-      flex: 1;
-      min-height: 100vh;
+      justify-content: center;
       align-items: center;
+      min-height: 100vh;
     }
-
-    .clock {
-      width: 30rem;
-      height: 30rem;
-      border: 20px solid white;
+    .circle{
+      border: 25px solid #5b13cfd3;
       border-radius: 50%;
-      margin: 50px auto;
-      position: relative;
-      padding: 2rem;
+      height: 400px;
+      width: 400px;
       box-shadow:
-        0 0 0 4px rgba(0,0,0,0.1),
+        0 0 0 4px rgba(240, 126, 126, 0.1),
         inset 0 0 0 3px #EFEFEF,
         inset 0 0 10px black,
-        0 0 10px rgba(0,0,0,0.2);
+        0 0 10px rgba(247, 17, 17, 0.2);
+        padding: 18px;
     }
-
     .clock-face {
+      
       position: relative;
       width: 100%;
       height: 100%;
-      transform: translateY(-3px); /* account for the height of the clock hands */
+      transform: translateY(-3px);
     }
-
-    .hand {
+    .hand{
       width: 50%;
       height: 6px;
-      background: black;
+      background-color:rgba(6, 238, 207, 0.945);
       position: absolute;
       top: 50%;
+      transform-origin: 100%;
+      transform: rotate(90deg);
+      transition: all 0.05s;
+      transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
     }
-
+    
   </style>
+</head>
 
-  <script>
-
-
-  </script>
+<body>
+  <div class="circle">
+    <div class="clock-face">
+    <div class='hand sec-hand'></div>
+    <div class='hand min-hand'></div>
+    <div class='hand hour-hand'></div>
+  </div>
+  </div>  
 </body>
+
+<script>
+  const secHand = document.querySelector('.sec-hand');
+  const minHand = document.querySelector('.min-hand');
+  const hourHand = document.querySelector('.hour-hand');
+  function getTime(){
+    var date = new Date();
+    const seconds = date.getSeconds();
+    const sec = 6*seconds + 90;
+
+    const minutes = date.getMinutes();
+    const min = 6*minutes + (seconds/60)*6 + 90; 
+
+    const hours = date.getHours();
+    const hour = 30*hours + (minutes/60)*6 + 90;
+
+    secHand.style.transform  = `rotate(${sec}deg)`;
+    minHand.style.transform  = `rotate(${min}deg)`;
+    hourHand.style.transform  = `rotate(${hour}deg)`;
+  }
+  setInterval(getTime,1000)
+
+</script>
 </html>
