@@ -1,1 +1,1 @@
-<img src="./Screenshot (52)">
+<img src="Screenshot_clock.png">
