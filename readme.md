@@ -1,4 +1,6 @@
-﻿![](https://javascript30.com/images/JS3-social-share.png)
+
+ 
+ [![HitCount](http://hits.dwyl.com/sachinnegi/https://githubcom/sachinnegi/JavaScript-30.svg)](http://hits.dwyl.com/sachinnegi/https://githubcom/sachinnegi/JavaScript-30)
 
 # JavaScript30
 
